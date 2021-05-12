@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="binarycomposer.cpp" />
+    <ClCompile Include="error.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="string.cpp" />
+    <ClCompile Include="network.cpp" />
+    <ClCompile Include="guid.cpp" />
+    <ClCompile Include="com.cpp" />
+    <ClCompile Include="serialization\deserializer.cpp">
+      <Filter>serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="serialization\serializer.cpp">
+      <Filter>serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="filesystem.cpp" />
+    <ClCompile Include="trace\consoletracesink.cpp">
+      <Filter>trace</Filter>
+    </ClCompile>
+    <ClCompile Include="trace\filetracesink.cpp">
+      <Filter>trace</Filter>
+    </ClCompile>
+    <ClCompile Include="trace\trace.cpp">
+      <Filter>trace</Filter>
+    </ClCompile>
+    <ClCompile Include="fileenumerator.cpp" />
+    <ClCompile Include="security.cpp" />
+    <ClCompile Include="registry\registry.cpp">
+      <Filter>registry</Filter>
+    </ClCompile>
+    <ClCompile Include="registry\registrykey.cpp">
+      <Filter>registry</Filter>
+    </ClCompile>
+    <ClCompile Include="registry\registrymonitor.cpp">
+      <Filter>registry</Filter>
+    </ClCompile>
+    <ClCompile Include="registry\registrypath.cpp">
+      <Filter>registry</Filter>
+    </ClCompile>
+    <ClCompile Include="resourcedata.cpp" />
+    <ClCompile Include="logging\logsink.cpp">
+      <Filter>logging</Filter>
+    </ClCompile>
+    <ClCompile Include="network\adapters.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="burstguard.cpp" />
+    <ClCompile Include="network\nci.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="process\applicationrunner.cpp">
+      <Filter>process</Filter>
+    </ClCompile>
+    <ClCompile Include="process\process.cpp">
+      <Filter>process</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="binarycomposer.h" />
+    <ClInclude Include="buffer.h" />
+    <ClInclude Include="error.h" />
+    <ClInclude Include="math.h" />
+    <ClInclude Include="memory.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="string.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="network.h" />
+    <ClInclude Include="guid.h" />
+    <ClInclude Include="com.h" />
+    <ClInclude Include="serialization\deserializer.h">
+      <Filter>serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="serialization\serializer.h">
+      <Filter>serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="serialization\typetag.h">
+      <Filter>serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="filesystem.h" />
+    <ClInclude Include="macroargument.h" />
+    <ClInclude Include="trace\consoletracesink.h">
+      <Filter>trace</Filter>
+    </ClInclude>
+    <ClInclude Include="trace\filetracesink.h">
+      <Filter>trace</Filter>
+    </ClInclude>
+    <ClInclude Include="trace\itracesink.h">
+      <Filter>trace</Filter>
+    </ClInclude>
+    <ClInclude Include="trace\trace.h">
+      <Filter>trace</Filter>
+    </ClInclude>
+    <ClInclude Include="trace\xtrace.h">
+      <Filter>trace</Filter>
+    </ClInclude>
+    <ClInclude Include="fileenumerator.h" />
+    <ClInclude Include="security.h" />
+    <ClInclude Include="registry\registry.h">
+      <Filter>registry</Filter>
+    </ClInclude>
+    <ClInclude Include="registry\registrykey.h">
+      <Filter>registry</Filter>
+    </ClInclude>
+    <ClInclude Include="registry\registrymonitor.h">
+      <Filter>registry</Filter>
+    </ClInclude>
+    <ClInclude Include="registry\registrypath.h">
+      <Filter>registry</Filter>
+    </ClInclude>
+    <ClInclude Include="valuemapper.h" />
+    <ClInclude Include="resourcedata.h" />
+    <ClInclude Include="logging\ilogsink.h">
+      <Filter>logging</Filter>
+    </ClInclude>
+    <ClInclude Include="logging\logsink.h">
+      <Filter>logging</Filter>
+    </ClInclude>
+    <ClInclude Include="network\adapters.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="burstguard.h" />
+    <ClInclude Include="network\nci.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="process\applicationrunner.h">
+      <Filter>process</Filter>
+    </ClInclude>
+    <ClInclude Include="process\process.h">
+      <Filter>process</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="serialization">
+      <UniqueIdentifier>{60530505-2146-473a-92fc-9c1883cfaa88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="trace">
+      <UniqueIdentifier>{0c82bd88-7f1d-4a6c-b5e7-440e9b5dc96a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="registry">
+      <UniqueIdentifier>{a916aef5-7d05-4081-ac65-77d6d56365bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logging">
+      <UniqueIdentifier>{dcae1c72-8215-4a52-a099-11aa3f770b4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="network">
+      <UniqueIdentifier>{cdd9835f-e016-46fa-bdb4-847181ac118d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="process">
+      <UniqueIdentifier>{3b5ae5ea-efbe-40df-93c2-0c55b7d8cc35}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

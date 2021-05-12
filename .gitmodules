@@ -1,0 +1,12 @@
+[submodule "libwfp/libwfp"]
+	path = libwfp/libwfp
+	url = https://github.com/mullvad/libwfp
+[submodule "libwfp/windows-libraries"]
+	path = libwfp/windows-libraries
+	url = https://github.com/mullvad/windows-libraries
+[submodule "cxxopts"]
+	path = cxxopts
+	url = https://github.com/jarro2783/cxxopts
+[submodule "json"]
+	path = json
+	url = https://github.com/nlohmann/json

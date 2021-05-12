@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>JSONata</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/codemirror.min.css" integrity="sha512-xIf9AdJauwKIVtrVRZ0i4nHP61Ogx9fSRAkCLecmE2dL/U8ioWpDvFCAy4dcfecN72HHB9+7FfQj3aiO68aaaw==" crossorigin="anonymous" />
+    <style>
+        .flex-container {
+        display: flex;
+        }
+
+        .flex-container > div {
+        flex-grow: 0;
+        flex-basis: 0;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jsonata/jsonata.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/codemirror.min.js" integrity="sha512-hc0zo04EIwTzKLvp2eycDTeIUuvoGYYmFIjYx7DmfgQeZPC5N27sPG2wEQPq8d8fCTwuguLrI1ffatqxyTbHJw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/mode/javascript/javascript.min.js" integrity="sha512-isTDQTpVc8nKKMQmhm0b6fccRPjzo2g0q6l2VLy9/jDn5s8bEUu9WuSGkkAfN/NCwI3+Qi5wEVCaPRoWvT6YPw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ghaiklor/codemirror-mode-jsonata@master/codemirror-mode-jsonata.js"></script>
+    
+  </head>
+  <body>
+      <input type="file" id='file'>
+      <button onclick="query()">Query</button>
+      <hr/>
+
+      <div class="flex-container">
+        <div>
+            <label for="json">Json</label>
+            <textarea id="json" spellcheck="false" class="codemirror-textarea"></textarea>
+        </div>
+
+        <div>
+            <label for="rules">Query</label>
+            <textarea id="rules" spellcheck="false" class="codemirror-textarea"></textarea>
+        </div>
+        <div>
+            <label for="output">Result</label>
+            <textarea id="output" spellcheck="false" class="codemirror-textarea"></textarea>
+        </div>
+      </div>
+
+  <script>
+      var srcEditor, dstEditor, ruleEditor;
+
+      function query() {
+        var json = JSON.parse(srcEditor.getValue());
+        var rules = ruleEditor.getValue();
+        var result = jsonata(rules).evaluate(json);
+        ppresult = JSON.stringify(result, null, 1); 
+        dstEditor.setValue(ppresult);
+      }
+      function readFile() {
+        var reader = new FileReader();
+        var fileToRead = document.querySelector('input').files[0];
+
+        reader.addEventListener("loadend", function() {
+            srcEditor.setValue(reader.result);
+        });
+
+        // start reading a loaded file
+        reader.readAsText(fileToRead);
+      }
+
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        var srcCodeText = document.getElementsByClassName('codemirror-textarea')[0];
+        var ruleCodeText = document.getElementsByClassName('codemirror-textarea')[1];
+        var dstCodeText = document.getElementsByClassName('codemirror-textarea')[2];
+
+        srcEditor = CodeMirror.fromTextArea(srcCodeText, {
+           lineNumbers : true,
+           mode: {
+                name: "javascript",
+                json: true,
+                readOnly: true,
+            },
+        });
+        ruleEditor = CodeMirror.fromTextArea(ruleCodeText, {
+           lineNumbers : true,
+           mode: {
+                name: "jsonata",
+            },
+            lineWrapping: true,
+        });
+        dstEditor = CodeMirror.fromTextArea(dstCodeText, {
+           lineNumbers : true,
+           mode: {
+                name: "javascript",
+                json: true,
+                readOnly: true,
+            },
+        });
+
+        srcEditor.setSize(400, 800);
+        ruleEditor.setSize(400, 300);
+        dstEditor.setSize(400, 800);
+
+        document.getElementById('file').addEventListener('change', readFile, false);
+
+        
+
+     });
+  </script>
+  </body>
+</html>
